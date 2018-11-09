@@ -31,7 +31,6 @@ public class MadLaver : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("Dette virker");
 
         Destroy(MadSpawn);
 

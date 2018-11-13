@@ -493,6 +493,53 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 23.333334, y: 0.33333334}
   m_EdgeRadius: 0
+--- !u!1001 &1912781177
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4824989615593978, guid: 4718afcc1dccadd4dab4dfb8300defcf, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4824989615593978, guid: 4718afcc1dccadd4dab4dfb8300defcf, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4824989615593978, guid: 4718afcc1dccadd4dab4dfb8300defcf, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4824989615593978, guid: 4718afcc1dccadd4dab4dfb8300defcf, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4824989615593978, guid: 4718afcc1dccadd4dab4dfb8300defcf, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4824989615593978, guid: 4718afcc1dccadd4dab4dfb8300defcf, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4824989615593978, guid: 4718afcc1dccadd4dab4dfb8300defcf, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4824989615593978, guid: 4718afcc1dccadd4dab4dfb8300defcf, type: 2}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 70976728160626378, guid: 4718afcc1dccadd4dab4dfb8300defcf,
+        type: 2}
+      propertyPath: m_Offset.y
+      value: 0.8
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4718afcc1dccadd4dab4dfb8300defcf, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!1 &2053280052
 GameObject:
   m_ObjectHideFlags: 0
@@ -626,7 +673,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91ce3c127618eb343a74fb2b2c6242a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Mad: {fileID: 1759616493720354, guid: fd07eaeb456e13b46a5883640cfd7350, type: 2}
+  Mad: {fileID: 1294356935445190, guid: 4718afcc1dccadd4dab4dfb8300defcf, type: 2}
   Top: {fileID: 1656706836}
   Bund: {fileID: 1510582983}
   "H\xF8jre": {fileID: 278612512}

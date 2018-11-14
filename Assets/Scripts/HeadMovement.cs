@@ -8,6 +8,7 @@ public class HeadMovement : MonoBehaviour {
     Vector2 retning;
 
     List<Transform> Hale = new List<Transform>();
+    List<GameObject> HaleObject = new List<GameObject>();
 
     bool Spist = false;
     public GameObject HalePrefab;
@@ -17,8 +18,9 @@ public class HeadMovement : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        InvokeRepeating("Movement", 0.1f, 0.1f);
-	}
+        InvokeRepeating("Movement", 0.25f, 0.25f);
+        InvokeRepeating("Grow", 3f, 3f);
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -39,24 +41,25 @@ public class HeadMovement : MonoBehaviour {
         {
             retning = Vector2.right;
         }
+
+        if (Spist == true && Hale.Count > 0)
+        {
+            Destroy(HaleObject.Last());
+            HaleObject.Remove(HaleObject.Last());
+            Hale.Remove(Hale.Last());
+
+            Spist = false;
+        }
+
     }
 
-    void Movement ()
+    void Movement()
     {
         Vector2 CurrentPos = transform.position;
 
         transform.Translate(retning);
 
-        if (Spist == true)
-        {
-            GameObject HalePre = (GameObject)Instantiate(HalePrefab, CurrentPos, Quaternion.identity);
-
-            Hale.Insert(0, HalePre.transform);
-
-            Spist = false;
-
-        }
-        else if (Hale.Count > 0)
+        if (Hale.Count > 0)
         {
             Hale.Last().position = CurrentPos;
 
@@ -72,13 +75,22 @@ public class HeadMovement : MonoBehaviour {
         if (collision.name.StartsWith("HvidCirkel"))
         {
             Spist = true;
-
         }
         else
         {
             transform.position = Startpos;
         }
 
+    }
+
+    void Grow ()
+    {
+        Vector2 CurrentPos = transform.position;
+
+        GameObject HalePre = (GameObject)Instantiate(HalePrefab, CurrentPos, Quaternion.identity);
+
+        Hale.Insert(0, HalePre.transform);
+        HaleObject.Insert(0, HalePre);
     }
 
 }

@@ -627,7 +627,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b989b720bb653744a764a63e5fefc30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TidTilbage: 150
+  TidTilbage: 30
 --- !u!114 &1795163611
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -911,6 +911,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HalePrefab: {fileID: 1821133371056818, guid: f84c8029a7079da4d8d25985e847a23f, type: 2}
+  MaxLaengde: 5
   Snake: {fileID: 2112167371}
 --- !u!61 &2112167374
 BoxCollider2D:

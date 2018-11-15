@@ -2,19 +2,20 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class HeadMovement : MonoBehaviour {
 
     Vector2 retning;
 
-    List<Transform> Hale = new List<Transform>();
     List<GameObject> HaleObject = new List<GameObject>();
 
     bool Spist = false;
     public GameObject HalePrefab;
 
+    public int MaxLaengde;
+
     public GameObject Snake;
-    Vector2 Startpos = new Vector2(0.0f, 0.0f); 
 
     // Use this for initialization
     void Start () {
@@ -51,9 +52,6 @@ public class HeadMovement : MonoBehaviour {
 
         if (Spist == true && HaleObject.Count > 0)
         {
-            //Hale.Remove(Hale.Last());
-            //Destroy(HaleObject.Last());
-            //HaleObject.Remove(HaleObject.Last());
 
             Destroy(HaleObject.Last());
             HaleObject.Remove(HaleObject.Last());
@@ -64,16 +62,16 @@ public class HeadMovement : MonoBehaviour {
 
         if (HaleObject.Count > 0)
         {
-            //Hale.Last().position = CurrentPos;
-
-            //Hale.Insert(0, Hale.Last());
-            //Hale.RemoveAt(Hale.Count - 1);
-
             HaleObject.Last().transform.position = CurrentPos;
 
             HaleObject.Insert(0, HaleObject.Last());
             HaleObject.RemoveAt(HaleObject.Count - 1);
 
+        }
+
+        if (HaleObject.Count > MaxLaengde)
+        {
+            SceneManager.LoadScene("Death");
         }
 
     }
@@ -87,7 +85,7 @@ public class HeadMovement : MonoBehaviour {
         }
         else
         {
-            transform.position = Startpos;
+            SceneManager.LoadScene("Death");
         }
 
     }
@@ -98,7 +96,6 @@ public class HeadMovement : MonoBehaviour {
 
         GameObject HalePre = (GameObject)Instantiate(HalePrefab, CurrentPos, Quaternion.identity);
 
-        //Hale.Insert(0, HalePre.transform);
         HaleObject.Insert(0, HalePre);
     }
 

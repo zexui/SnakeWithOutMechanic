@@ -627,7 +627,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b989b720bb653744a764a63e5fefc30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TidTilbage: 30
+  TidTilbage: 150
 --- !u!114 &1795163611
 MonoBehaviour:
   m_ObjectHideFlags: 0

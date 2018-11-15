@@ -21,6 +21,7 @@ public class HeadMovement : MonoBehaviour {
     void Start () {
         InvokeRepeating("Movement", 0.25f, 0.25f);
         InvokeRepeating("Grow", 3f, 3f);
+
     }
 	
 	// Update is called once per frame
@@ -71,6 +72,7 @@ public class HeadMovement : MonoBehaviour {
 
         if (HaleObject.Count > MaxLaengde)
         {
+            
             SceneManager.LoadScene("Death");
         }
 

@@ -21,7 +21,7 @@ public class MovieScript : MonoBehaviour {
         
         MovieTime += Time.deltaTime;
 
-        if (MovieTime >= 8)
+        if (MovieTime >= 7.5f)
         {
             SceneManager.LoadScene("Main Menu");
         }

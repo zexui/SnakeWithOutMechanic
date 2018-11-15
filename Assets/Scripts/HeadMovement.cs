@@ -41,16 +41,6 @@ public class HeadMovement : MonoBehaviour {
         {
             retning = Vector2.right;
         }
-
-        if (Spist == true && Hale.Count > 0)
-        {
-            Destroy(HaleObject.Last());
-            HaleObject.Remove(HaleObject.Last());
-            Hale.Remove(Hale.Last());
-
-            Spist = false;
-        }
-
     }
 
     void Movement()
@@ -59,16 +49,35 @@ public class HeadMovement : MonoBehaviour {
 
         transform.Translate(retning);
 
-        if (Hale.Count > 0)
+        if (Spist == true && HaleObject.Count > 0)
         {
-            Hale.Last().position = CurrentPos;
+            //Hale.Remove(Hale.Last());
+            //Destroy(HaleObject.Last());
+            //HaleObject.Remove(HaleObject.Last());
 
-            Hale.Insert(0, Hale.Last());
-            Hale.RemoveAt(Hale.Count - 1);
+            Destroy(HaleObject.Last());
+            HaleObject.Remove(HaleObject.Last());
+            
+
+            Spist = false;
+        }
+
+        if (HaleObject.Count > 0)
+        {
+            //Hale.Last().position = CurrentPos;
+
+            //Hale.Insert(0, Hale.Last());
+            //Hale.RemoveAt(Hale.Count - 1);
+
+            HaleObject.Last().transform.position = CurrentPos;
+
+            HaleObject.Insert(0, HaleObject.Last());
+            HaleObject.RemoveAt(HaleObject.Count - 1);
+
         }
 
     }
-
+        
     private void OnTriggerEnter2D(Collider2D collision)
     {
 
@@ -89,7 +98,7 @@ public class HeadMovement : MonoBehaviour {
 
         GameObject HalePre = (GameObject)Instantiate(HalePrefab, CurrentPos, Quaternion.identity);
 
-        Hale.Insert(0, HalePre.transform);
+        //Hale.Insert(0, HalePre.transform);
         HaleObject.Insert(0, HalePre);
     }
 

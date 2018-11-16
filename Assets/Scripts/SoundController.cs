@@ -53,3 +53,4 @@ public class SoundController : MonoBehaviour
     }
 
 }
+//https://www.youtube.com/watch?v=egxNXuwf0_g brugt til at lære hvordan man tilføjer lyd
